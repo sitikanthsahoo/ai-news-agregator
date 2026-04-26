@@ -7,8 +7,8 @@ export default function AboutPage() {
       
       <div className="w-full aspect-[21/9] rounded-3xl overflow-hidden mb-12 shadow-2xl border border-stone-200">
         <img 
-          src="/chronicle_hq_about_1777180944647.png" 
-          alt="Chronicle HQ" 
+          src="/hero.png" 
+          alt="The Chronicle Home" 
           className="w-full h-full object-cover"
         />
       </div>
