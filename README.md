@@ -2,7 +2,7 @@
 
 An intelligent news platform that aggregates global stories, performs real-time sentiment analysis, and generates AI-driven summaries. Built as a high-performance full-stack application with a newspaper-inspired brutalist aesthetic.
 
-![Chronicle HQ](/frontend/public/chronicle_hq_about_1777180944647.png)
+![The Chronicle Home](/frontend/public/hero.png)
 
 ## 🌟 Key Features
 
