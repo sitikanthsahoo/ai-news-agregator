@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PulseNews AI Aggregator - Retro Editorial</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-low": "#f7f3f2",
+                      "primary-fixed": "#e4e2e1",
+                      "surface": "#fdf8f8",
+                      "on-tertiary-fixed": "#261a00",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "inverse-on-surface": "#f4f0ef",
+                      "secondary-fixed-dim": "#ffb599",
+                      "on-secondary-fixed-variant": "#7e2c04",
+                      "on-surface": "#1c1b1b",
+                      "on-tertiary-fixed-variant": "#5c4300",
+                      "surface-container": "#f1edec",
+                      "on-background": "#1c1b1b",
+                      "secondary-fixed": "#ffdbce",
+                      "surface-container-highest": "#e5e2e1",
+                      "surface-variant": "#e5e2e1",
+                      "error-container": "#ffdad6",
+                      "on-primary-container": "#929191",
+                      "secondary": "#9d431b",
+                      "on-primary-fixed-variant": "#474746",
+                      "inverse-primary": "#c8c6c5",
+                      "on-primary-fixed": "#1b1c1c",
+                      "surface-dim": "#ddd9d8",
+                      "tertiary": "#1e1400",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary-container": "#382700",
+                      "surface-tint": "#5f5e5e",
+                      "on-error": "#ffffff",
+                      "inverse-surface": "#313030",
+                      "background": "#fdf8f8",
+                      "outline": "#747878",
+                      "outline-variant": "#c4c7c7",
+                      "error": "#ba1a1a",
+                      "surface-container-high": "#ebe7e7",
+                      "secondary-container": "#fe8c5e",
+                      "on-secondary-container": "#732600",
+                      "on-surface-variant": "#444748",
+                      "primary-container": "#2a2a2a",
+                      "primary": "#151616",
+                      "on-error-container": "#93000a",
+                      "tertiary-fixed-dim": "#f6be39",
+                      "primary-fixed-dim": "#c8c6c5",
+                      "surface-bright": "#fdf8f8",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-container": "#b88900",
+                      "tertiary-fixed": "#ffdfa0",
+                      "on-secondary-fixed": "#370e00"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "unit": "4px",
+                      "xs": "4px",
+                      "md": "16px",
+                      "sm": "8px",
+                      "xl": "48px",
+                      "container-max": "1120px",
+                      "lg": "24px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "body-lg": [
+                              "Newsreader"
+                      ],
+                      "body-md": [
+                              "Newsreader"
+                      ],
+                      "h3": [
+                              "Newsreader"
+                      ],
+                      "mono-data": [
+                              "Space Grotesk"
+                      ],
+                      "mono-label": [
+                              "Space Grotesk"
+                      ],
+                      "h1": [
+                              "Newsreader"
+                      ],
+                      "h2": [
+                              "Newsreader"
+                      ]
+              },
+              "fontSize": {
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "h3": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "mono-data": [
+                              "13px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "mono-label": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "h1": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "h2": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md h-screen overflow-hidden flex selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- SideNavBar (Semantic Map: DISPATCH Active) -->
+<nav class="fixed left-0 top-0 h-screen w-64 flex flex-col pt-20 border-r border-stone-200 dark:border-stone-800 bg-stone-50 dark:bg-stone-900 z-50">
+<div class="px-6 mb-8">
+<h1 class="font-serif text-xl font-bold text-stone-900 dark:text-stone-50">THE CHRONICLE</h1>
+</div>
+<div class="flex-1 flex flex-col gap-2">
+<!-- DASHBOARD (Inactive) -->
+<a class="flex items-center gap-3 text-stone-600 dark:text-stone-400 p-3 mx-2 hover:bg-stone-200 dark:hover:bg-stone-800 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="font-mono-label text-mono-label uppercase tracking-wider">DASHBOARD</span>
+</a>
+<!-- ARCHIVE (Inactive) -->
+<a class="flex items-center gap-3 text-stone-600 dark:text-stone-400 p-3 mx-2 hover:bg-stone-200 dark:hover:bg-stone-800 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">inventory_2</span>
+<span class="font-mono-label text-mono-label uppercase tracking-wider">ARCHIVE</span>
+</a>
+<!-- DISPATCH (Active) -->
+<a class="flex items-center gap-3 bg-stone-900 text-stone-50 dark:bg-stone-50 dark:text-stone-900 p-3 mx-2 rounded-xl scale-95 transition-transform duration-75 shadow-sm" href="#">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">newspaper</span>
+<span class="font-mono-label text-mono-label uppercase tracking-wider">DISPATCH</span>
+</a>
+<!-- CHANNELS (Inactive) -->
+<a class="flex items-center gap-3 text-stone-600 dark:text-stone-400 p-3 mx-2 hover:bg-stone-200 dark:hover:bg-stone-800 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">hub</span>
+<span class="font-mono-label text-mono-label uppercase tracking-wider">CHANNELS</span>
+</a>
+<!-- ANALYTICS (Inactive) -->
+<a class="flex items-center gap-3 text-stone-600 dark:text-stone-400 p-3 mx-2 hover:bg-stone-200 dark:hover:bg-stone-800 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">analytics</span>
+<span class="font-mono-label text-mono-label uppercase tracking-wider">ANALYTICS</span>
+</a>
+</div>
+<!-- CTA -->
+<div class="p-6">
+<button class="w-full bg-primary text-on-primary p-3 rounded-full font-mono-label text-mono-label uppercase tracking-wider shadow-md hover:shadow-lg transition-all">NEW EDITION</button>
+</div>
+<div class="mt-auto border-t border-stone-200 dark:border-stone-800 py-4 flex flex-col gap-2">
+<!-- SUPPORT -->
+<a class="flex items-center gap-3 text-stone-600 dark:text-stone-400 p-3 mx-2 hover:bg-stone-200 dark:hover:bg-stone-800 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">help</span>
+<span class="font-mono-label text-mono-label uppercase tracking-wider">SUPPORT</span>
+</a>
+<!-- LOGOUT -->
+<a class="flex items-center gap-3 text-stone-600 dark:text-stone-400 p-3 mx-2 hover:bg-stone-200 dark:hover:bg-stone-800 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+<span class="font-mono-label text-mono-label uppercase tracking-wider">LOGOUT</span>
+</a>
+</div>
+<!-- Header Info (Bottom of Nav in this design) -->
+<div class="border-t border-stone-200 dark:border-stone-800 p-6 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-stone-600">person</span>
+</div>
+<div>
+<div class="font-mono-label text-mono-label uppercase text-stone-900 dark:text-stone-50 font-bold">EDITOR-IN-CHIEF</div>
+<div class="font-mono-data text-mono-data text-stone-600 dark:text-stone-400">Vol. 42 Issue 9</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="ml-64 flex-1 h-screen overflow-y-auto bg-surface-container-low flex justify-center">
+<!-- TopNavBar (Simulated for layout consistency, though TopAppBar JSON wasn't explicitly requested as primary shell, it sets context) -->
+<header class="fixed top-0 left-64 right-0 flex justify-between items-center w-[calc(100%-16rem)] px-6 py-3 h-16 bg-stone-50/90 backdrop-blur-md dark:bg-stone-950/90 border-b border-stone-200 dark:border-stone-800 z-40">
+<div class="flex items-center gap-6">
+<!-- Navigation links simulated for Top Bar Context -->
+<nav class="flex gap-6">
+<a class="text-stone-900 dark:text-stone-50 font-bold border-b-2 border-stone-900 dark:border-stone-50 pb-1 font-mono uppercase tracking-widest text-xs" href="#">DISPATCH</a>
+<a class="text-stone-500 dark:text-stone-400 font-mono pb-1 hover:text-stone-900 transition-colors font-mono uppercase tracking-widest text-xs" href="#">WORLD</a>
+<a class="text-stone-500 dark:text-stone-400 font-mono pb-1 hover:text-stone-900 transition-colors font-mono uppercase tracking-widest text-xs" href="#">TECH</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative bg-[#F4F3E6] shadow-inner flex items-center h-9 rounded-full px-4">
+<span class="material-symbols-outlined text-[18px] text-stone-500 mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 p-0 font-mono-data text-mono-data w-48 text-on-surface placeholder:text-outline rounded-full" placeholder="Search archive..." type="text"/>
+</div>
+<button class="w-9 h-9 flex items-center justify-center rounded-full bg-stone-100 hover:bg-stone-200 transition-colors">
+<span class="material-symbols-outlined text-[20px] text-stone-900">account_circle</span>
+</button>
+<button class="w-9 h-9 flex items-center justify-center rounded-full bg-stone-100 hover:bg-stone-200 transition-colors">
+<span class="material-symbols-outlined text-[20px] text-stone-900">settings</span>
+</button>
+</div>
+</header>
+<div class="w-full max-w-container-max pt-24 px-gutter pb-xl">
+<!-- Page Header -->
+<div class="border-b border-stone-200 pb-6 mb-8">
+<p class="font-mono-label text-mono-label text-outline uppercase tracking-widest mb-2">Morning Edition • Oct 24, 2023</p>
+<h1 class="font-h1 text-h1 text-on-surface">The Intelligence Brief</h1>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Main Feed (Columns 1-8) -->
+<div class="col-span-12 lg:col-span-8 flex flex-col gap-6">
+<!-- Lead Story Card -->
+<article class="bg-surface rounded-3xl shadow-sm hover:shadow-md transition-shadow flex flex-col group relative overflow-hidden">
+<div class="bg-surface-variant px-5 py-3 flex justify-between items-center">
+<span class="font-mono-label text-mono-label uppercase">Lead Story</span>
+<span class="bg-[#e4ece5] text-[#2c4c3b] px-3 py-1 rounded-full font-mono-data text-[11px] uppercase tracking-wider">Positive Outlook</span>
+</div>
+<div class="p-8">
+<h2 class="font-h2 text-h2 text-on-surface mb-4">Federal Reserve Signals Potential Halt to Rate Hikes Amid Cooling Inflation Data</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6 line-clamp-3">Markets rallied Tuesday following comments from Federal Reserve Chair Jerome Powell, which analysts interpreted as a dovish pivot. The latest Consumer Price Index report showed unexpected cooling across core sectors, providing the central bank with much-needed breathing room after an aggressive tightening cycle.</p>
+<div class="flex justify-between items-center mt-4 border-t border-stone-100 pt-6">
+<div class="flex gap-4 font-mono-data text-mono-data text-outline">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span> 10m ago</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">source</span> Reuters, WSJ</span>
+</div>
+<button class="bg-primary text-on-primary px-5 py-2.5 rounded-full font-mono-label text-mono-label uppercase tracking-wider shadow-sm hover:shadow-md transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">auto_awesome</span> Synthesize
+                                </button>
+</div>
+</div>
+</article>
+<!-- Secondary Story Cards Container -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Story 2 -->
+<article class="bg-surface rounded-3xl shadow-sm hover:shadow-md transition-shadow flex flex-col overflow-hidden">
+<div class="bg-surface-container px-4 py-3 flex justify-between items-center">
+<span class="font-mono-label text-[12px] uppercase">Technology</span>
+<span class="bg-[#f2e6e6] text-[#6b2c2c] px-3 py-1 rounded-full font-mono-data text-[11px] uppercase tracking-wider">Critical</span>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<h3 class="font-h3 text-h3 text-on-surface mb-3">EU Advances Landmark AI Regulation Bill to Final Stages</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 flex-1 line-clamp-4">European lawmakers have reached a preliminary consensus on the categorization of 'high-risk' generative AI systems. The proposed framework mandates stringent transparency requirements for foundational models, sparking debate among global tech conglomerates.</p>
+<div class="mt-auto border-t border-stone-100 pt-4 flex justify-between items-center">
+<span class="font-mono-data text-[12px] text-outline">1h ago • TechCrunch</span>
+<button class="bg-surface-container hover:bg-surface-variant px-4 py-1.5 rounded-full font-mono-label text-[12px] uppercase transition-colors">Brief</button>
+</div>
+</div>
+</article>
+<!-- Story 3 -->
+<article class="bg-surface rounded-3xl shadow-sm hover:shadow-md transition-shadow flex flex-col overflow-hidden">
+<div class="bg-surface-container px-4 py-3 flex justify-between items-center">
+<span class="font-mono-label text-[12px] uppercase">Geopolitics</span>
+<span class="bg-[#e6e8eb] text-[#3b4c63] px-3 py-1 rounded-full font-mono-data text-[11px] uppercase tracking-wider">Neutral</span>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<div class="w-full h-32 rounded-2xl mb-5 overflow-hidden bg-surface-variant flex items-center justify-center">
+<!-- Placeholder for image, adhering to rules -->
+<span class="material-symbols-outlined text-[32px] text-outline">image</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface mb-3">Diplomatic Summit Concludes with Modest Climate Pledges</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 flex-1 line-clamp-3">Delegates depart the summit having agreed on a framework for phased emissions reporting, though key enforcement mechanisms remain absent from the final accord.</p>
+<div class="mt-auto border-t border-stone-100 pt-4 flex justify-between items-center">
+<span class="font-mono-data text-[12px] text-outline">3h ago • AP News</span>
+<button class="bg-surface-container hover:bg-surface-variant px-4 py-1.5 rounded-full font-mono-label text-[12px] uppercase transition-colors">Brief</button>
+</div>
+</div>
+</article>
+</div>
+</div>
+<!-- Sidebar (Columns 9-12) -->
+<aside class="col-span-12 lg:col-span-4 flex flex-col gap-6">
+<!-- Trending Now Terminal -->
+<div class="bg-surface rounded-3xl shadow-sm overflow-hidden">
+<div class="bg-stone-900 text-stone-50 px-5 py-4 flex justify-between items-center">
+<span class="font-mono-label text-mono-label uppercase tracking-widest">&gt;&gt; Trending Signals</span>
+<span class="material-symbols-outlined text-[18px]">trending_up</span>
+</div>
+<ul class="divide-y divide-stone-100 py-2">
+<li class="p-4 hover:bg-surface-container cursor-pointer transition-colors flex gap-4">
+<span class="font-mono-label text-mono-label text-outline w-4 pt-1">01</span>
+<div>
+<div class="font-mono-label text-[13px] text-on-surface uppercase mb-1">#QuantumComputing</div>
+<div class="font-body-md text-[14px] text-on-surface-variant leading-snug">IBM announces breakthrough in error correction.</div>
+</div>
+</li>
+<li class="p-4 hover:bg-surface-container cursor-pointer transition-colors flex gap-4">
+<span class="font-mono-label text-mono-label text-outline w-4 pt-1">02</span>
+<div>
+<div class="font-mono-label text-[13px] text-on-surface uppercase mb-1">#SupplyChain</div>
+<div class="font-body-md text-[14px] text-on-surface-variant leading-snug">Global shipping lane disruptions ease slightly.</div>
+</div>
+</li>
+<li class="p-4 hover:bg-surface-container cursor-pointer transition-colors flex gap-4">
+<span class="font-mono-label text-mono-label text-outline w-4 pt-1">03</span>
+<div>
+<div class="font-mono-label text-[13px] text-on-surface uppercase mb-1">#BioTech</div>
+<div class="font-body-md text-[14px] text-on-surface-variant leading-snug">FDA fast-tracks novel immunotherapy trials.</div>
+</div>
+</li>
+</ul>
+</div>
+<!-- AI Insights Column -->
+<div class="bg-[#F4F3E6] rounded-3xl shadow-sm overflow-hidden border border-stone-100">
+<div class="border-b border-stone-200/60 p-5 flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-secondary">psychology</span>
+<h3 class="font-mono-label text-mono-label uppercase tracking-wider text-on-surface">Algorithmic Insight</h3>
+</div>
+<div class="p-6">
+<p class="font-body-md text-body-md text-on-surface italic mb-6">"Cross-referencing global market data with recent regulatory filings suggests a high probability of consolidation within the renewable energy sector over the next fiscal quarter."</p>
+<div class="space-y-3 font-mono-data text-[12px] mb-6">
+<div class="flex justify-between border-b border-stone-200/60 pb-2">
+<span class="text-outline">Confidence Index:</span>
+<span class="text-on-surface font-bold">87.4%</span>
+</div>
+<div class="flex justify-between border-b border-stone-200/60 pb-2">
+<span class="text-outline">Data Points Analyzed:</span>
+<span class="text-on-surface font-bold">14,208</span>
+</div>
+</div>
+<button class="w-full bg-surface hover:bg-surface-variant py-3 rounded-full font-mono-label text-mono-label uppercase shadow-sm hover:shadow transition-all">View Full Report</button>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</main>
+</body></html>

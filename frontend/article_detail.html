@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Article Detail - AI News Aggregator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#ebe7e7",
+                        "primary-container": "#2a2a2a",
+                        "on-error-container": "#93000a",
+                        "primary": "#151616",
+                        "primary-fixed": "#e4e2e1",
+                        "inverse-surface": "#313030",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#732600",
+                        "outline-variant": "#c4c7c7",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#f6be39",
+                        "secondary-fixed-dim": "#ffb599",
+                        "inverse-primary": "#c8c6c5",
+                        "surface-container-highest": "#e5e2e1",
+                        "surface-bright": "#fdf8f8",
+                        "on-background": "#1c1b1b",
+                        "on-tertiary-fixed": "#261a00",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#1b1c1c",
+                        "tertiary": "#1e1400",
+                        "on-secondary-fixed": "#370e00",
+                        "surface": "#fdf8f8",
+                        "secondary": "#9d431b",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#f7f3f2",
+                        "background": "#fdf8f8",
+                        "on-secondary-fixed-variant": "#7e2c04",
+                        "secondary-fixed": "#ffdbce",
+                        "on-primary-container": "#929191",
+                        "tertiary-fixed": "#ffdfa0",
+                        "surface-variant": "#e5e2e1",
+                        "surface-container": "#f1edec",
+                        "surface-tint": "#5f5e5e",
+                        "outline": "#747878",
+                        "on-tertiary-fixed-variant": "#5c4300",
+                        "surface-dim": "#ddd9d8",
+                        "on-tertiary-container": "#b88900",
+                        "on-surface-variant": "#444748",
+                        "on-primary-fixed-variant": "#474746",
+                        "tertiary-container": "#382700",
+                        "secondary-container": "#fe8c5e",
+                        "on-surface": "#1c1b1b",
+                        "inverse-on-surface": "#f4f0ef",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "xl": "48px",
+                        "unit": "4px",
+                        "lg": "24px",
+                        "gutter": "24px",
+                        "container-max": "1120px",
+                        "md": "16px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "mono-data": ["Space Grotesk"],
+                        "body-lg": ["Newsreader"],
+                        "h2": ["Newsreader"],
+                        "h3": ["Newsreader"],
+                        "h1": ["Newsreader"],
+                        "mono-label": ["Space Grotesk"],
+                        "body-md": ["Newsreader"]
+                    },
+                    "fontSize": {
+                        "mono-data": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "h2": ["32px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "h3": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "mono-label": ["14px", {"lineHeight": "1.0", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Specific brutalist utility classes */
+        .brutalist-border {
+            border: 1px solid #1c1b1b;
+        }
+        .brutalist-outset {
+            border: 1px solid #1c1b1b;
+            box-shadow: 2px 2px 0px 0px #1c1b1b;
+            transition: all 0.2s ease-in-out;
+        }
+        .brutalist-outset:hover {
+            box-shadow: 1px 1px 0px 0px #1c1b1b;
+            transform: translate(1px, 1px);
+        }
+        .brutalist-outset:active {
+            box-shadow: none;
+            transform: translate(2px, 2px);
+            box-shadow: inset 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        .brutalist-inset {
+            border: 1px solid #1c1b1b;
+            box-shadow: inset 1px 1px 0px 0px rgba(0,0,0,0.1);
+            background-color: #f7f3f2;
+        }
+        .hairline-divider {
+            height: 1px;
+            background-color: #1c1b1b;
+            width: 100%;
+        }
+        .double-divider {
+            border-top: 1px solid #1c1b1b;
+            border-bottom: 1px solid #1c1b1b;
+            height: 4px;
+            width: 100%;
+        }
+        .chip {
+            background-color: #f6be39; /* tertiary-fixed-dim / mustard */
+            color: #1c1b1b;
+            padding: 4px 8px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 13px;
+            text-transform: uppercase;
+        }
+        .chip-alt {
+            background-color: #ffb599; /* secondary-fixed-dim / teal substitute based on config */
+            color: #1c1b1b;
+            padding: 4px 8px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 13px;
+            text-transform: uppercase;
+        }
+        body {
+            background-color: #fdf8f8;
+            color: #1c1b1b;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col antialiased">
+<!-- TopNavBar JSON implementation -->
+<nav class="bg-[#F4F3E6] border-b border-zinc-900 w-full sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-8 h-16 max-w-[1120px] mx-auto border-b-2 border-zinc-900">
+<!-- Brand Logo -->
+<a class="font-serif font-black uppercase text-2xl tracking-tighter text-zinc-900" href="#">CHRONICLE AI</a>
+<!-- Navigation Links (Hidden on mobile) -->
+<div class="hidden md:flex space-x-6">
+<!-- Using Technology as active for this article context -->
+<a class="text-zinc-500 font-mono uppercase text-xs tracking-widest hover:text-zinc-900 transition-colors active:opacity-80 transition-opacity" href="#">Politics</a>
+<a class="text-zinc-900 font-bold border-b-2 border-zinc-900 pb-1 hover:text-zinc-900 transition-colors active:opacity-80 transition-opacity" href="#">Technology</a>
+<a class="text-zinc-500 font-mono uppercase text-xs tracking-widest hover:text-zinc-900 transition-colors active:opacity-80 transition-opacity" href="#">Science</a>
+<a class="text-zinc-500 font-mono uppercase text-xs tracking-widest hover:text-zinc-900 transition-colors active:opacity-80 transition-opacity" href="#">Culture</a>
+</div>
+<!-- Trailing Icons -->
+<div class="flex items-center space-x-4">
+<button class="text-zinc-900 hover:text-zinc-500 transition-colors">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="text-zinc-900 hover:text-zinc-500 transition-colors">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-gutter py-xl">
+<!-- Breadcrumbs & Meta Top -->
+<div class="flex justify-between items-end mb-lg border-b border-outline pb-sm">
+<div class="flex gap-2 items-center font-mono-label text-mono-label text-on-surface-variant">
+<span>TECHNOLOGY</span>
+<span>/</span>
+<span>AI DEVELOPMENT</span>
+<span>/</span>
+<span class="text-on-background">REPORT</span>
+</div>
+<div class="font-mono-data text-mono-data text-on-surface-variant">
+                ID: X9-04A | REV: 2.1
+            </div>
+</div>
+<article class="grid grid-cols-12 gap-gutter">
+<!-- Header Section -->
+<header class="col-span-12 mb-xl">
+<h1 class="font-h1 text-h1 text-on-background mb-lg">The Architecture of Cognition: Tracing the Evolution of Large Language Models in the Private Sector</h1>
+<div class="flex flex-col md:flex-row justify-between md:items-center gap-4 py-sm double-divider mb-lg">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 brutalist-border bg-surface-container overflow-hidden">
+<img alt="Author Headshot" class="w-full h-full object-cover grayscale" data-alt="Black and white portrait of a man looking off camera, high contrast" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAe8xh_zBmMv5oSEBV4UbEBN4GnSPyLZqunFGYSn3aZwiN4KyuAtK1wjj1uPxR3G-JAZkZz_xScOx0btPxnsdcBSeWStGiQJ8UgAHRPPYGdplI3V3xai2uPrsx5prN2Mf1VmneoJqtZ4tYwRh2nt_-exI0uDvGbntik7qN2kIABV2RlrYQ7NgQdevQEGsJ0-TAHWcJj8DtpXEWVunLwZGL6mhBjOKHXC957U17TYdc2WW5uIEBpS8UCWyP4zjwCYXnUgplPR55EbU"/>
+</div>
+<div>
+<div class="font-mono-label text-mono-label text-on-background">BY DR. ELIAS VANCE</div>
+<div class="font-mono-data text-mono-data text-on-surface-variant">SENIOR ANALYST, SYNTHETIC INTELLIGENCE</div>
+</div>
+</div>
+<div class="flex gap-2">
+<span class="chip">AI VERIFIED</span>
+<span class="chip-alt">PEER REVIEWED</span>
+</div>
+</div>
+<!-- Hero Image -->
+<figure class="w-full mb-lg brutalist-border p-xs bg-surface-container-low">
+<div class="aspect-video w-full bg-surface-container-high overflow-hidden brutalist-inset relative">
+<img alt="Abstract Data Visualization" class="w-full h-full object-cover grayscale mix-blend-multiply opacity-80" data-alt="Abstract geometric shapes resembling a neural network rendered in monochrome tones with sharp lines and high contrast lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIOiCoWbvtC3x2WVQbKWnc_ui4WXUvUhSSCxcdPQnPQNlhQS_oEOW0dshVPTUZJ2OgI9AypFZdE1j49yuPAyK9-YR8M3Wj9_H069aKgngIUOumTURb4KFLS_oKne-2x5uV2E0jrHSgVWYlT2t4FbnpED63Y7BLhzoPRSKpGSO52-Veav8ywPoxBQdelC34qOCAXbqFJJ38aFWi4lboL5A3giuRaTvIpvQJv0yXQqwPBsODs2bZU-Ki4Z9T62c03RQTpvRAZEPk8EA"/>
+<div class="absolute bottom-0 left-0 bg-background/90 brutalist-border m-sm p-sm font-mono-data text-mono-data text-on-background">
+                            FIG 1.1: SYNAPTIC NODE CLUSTERING V.4
+                         </div>
+</div>
+<figcaption class="font-mono-data text-mono-data text-on-surface-variant mt-xs px-xs">
+                        Visualization of training data node density in recent proprietary models. Data source: Chronicle AI Syndicate API.
+                    </figcaption>
+</figure>
+</header>
+<!-- Sidebar / Metadata (Left Column on Desktop) -->
+<aside class="col-span-12 md:col-span-3 order-2 md:order-1 flex flex-col gap-lg">
+<!-- Data Well -->
+<div class="brutalist-inset p-md">
+<h3 class="font-mono-label text-mono-label text-on-background mb-sm border-b border-outline pb-xs">METRICS</h3>
+<ul class="font-mono-data text-mono-data text-on-surface-variant space-y-xs">
+<li class="flex justify-between"><span>READ TIME</span><span class="text-on-background">12 MIN</span></li>
+<li class="flex justify-between"><span>WORD COUNT</span><span class="text-on-background">2,450</span></li>
+<li class="flex justify-between"><span>COMPLEXITY</span><span class="text-on-background">HIGH</span></li>
+<li class="flex justify-between"><span>SENTIMENT</span><span class="text-on-background">NEUTRAL</span></li>
+</ul>
+</div>
+<!-- Tools -->
+<div class="brutalist-border p-sm flex flex-col gap-xs">
+<button class="brutalist-outset bg-background text-on-background px-md py-sm font-mono-label text-mono-label w-full flex justify-between items-center">
+                        SAVE TO ARCHIVE <span class="material-symbols-outlined text-[16px]" data-icon="bookmark">bookmark</span>
+</button>
+<button class="brutalist-outset bg-background text-on-background px-md py-sm font-mono-label text-mono-label w-full flex justify-between items-center">
+                        EXPORT CITATION <span class="material-symbols-outlined text-[16px]" data-icon="format_quote">format_quote</span>
+</button>
+<button class="brutalist-outset bg-background text-on-background px-md py-sm font-mono-label text-mono-label w-full flex justify-between items-center">
+                        SHARE DISPATCH <span class="material-symbols-outlined text-[16px]" data-icon="share">share</span>
+</button>
+</div>
+</aside>
+<!-- Main Article Body (Center/Right Column on Desktop) -->
+<div class="col-span-12 md:col-span-9 order-1 md:order-2 flex flex-col gap-lg">
+<!-- AI Summary Box -->
+<div class="brutalist-border p-md bg-surface-container-low mb-md relative mt-4">
+<div class="absolute -top-3 left-md bg-background px-xs font-mono-label text-mono-label text-on-background brutalist-border flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="auto_awesome">auto_awesome</span>
+                        AI SYNTHESIS
+                    </div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-sm">
+                        Recent advancements in proprietary LLMs demonstrate a shift away from pure parameter scaling toward architectural efficiency. Companies are increasingly utilizing mixture-of-experts (MoE) models and specialized synthetic data generation to improve reasoning capabilities while reducing computational overhead. This transition marks a maturation phase in the industry, prioritizing sustainable deployment over raw scaling laws.
+                    </p>
+</div>
+<!-- Article Content -->
+<div class="prose max-w-none font-body-lg text-body-lg text-on-background space-y-md">
+<p class="first-letter:text-5xl first-letter:font-bold first-letter:mr-2 first-letter:float-left first-letter:leading-none">
+                        The trajectory of artificial intelligence development over the past thirty-six months has defied conventional historical analogues. Where previous technological revolutions—the integrated circuit, the graphical user interface, the smartphone—relied on relatively transparent hardware iterations, the current era of cognition engineering happens entirely within opaque, highly capitalized silos.
+                    </p>
+<p>
+                        We are witnessing the construction of digital cathedrals where the architects themselves barely understand the structural physics keeping the vaulted ceilings aloft. The focus has decisively shifted from theoretical research to aggressive, industrial-scale deployment.
+                    </p>
+<h2 class="font-h2 text-h2 mt-lg mb-sm">The Post-Scaling Paradigm</h2>
+<p>
+                        For years, the governing hypothesis was simple: larger models, fed more data, yield linearly better results. This was the era of the monolithic dense model. However, recent empirical data suggests we are approaching an asymptote in the utility of purely uncurated data scraping.
+                    </p>
+<blockquote class="brutalist-inset p-md my-lg border-l-4 border-l-primary-container bg-surface-container-high italic font-body-lg text-body-lg">
+                        "We are transitioning from gathering every grain of sand on the beach to manufacturing specific, high-purity silicon in a laboratory setting. Synthetic data is no longer a stopgap; it is the foundation."
+                    </blockquote>
+<p>
+                        The pivot toward synthetic data represents a fundamental change in the supply chain of artificial intelligence. By using highly capable models to generate specialized training sets for smaller, more efficient models, organizations are creating recursive improvement loops that bypass the bottlenecks of human-generated data exhaustion.
+                    </p>
+</div>
+</div>
+</article>
+</main>
+<!-- Footer JSON implementation -->
+<footer class="bg-[#F4F3E6] border-t border-zinc-900 w-full mt-20">
+<div class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center max-w-[1120px] mx-auto border-t-2 border-zinc-900">
+<p class="font-mono text-[10px] uppercase tracking-widest text-zinc-900 mb-4 md:mb-0">
+                © 2024 CHRONICLE AI SYNDICATE. ALL RIGHTS RESERVED.
+            </p>
+<div class="flex gap-4 font-mono text-[10px] uppercase tracking-widest">
+<a class="text-zinc-500 hover:text-zinc-900 transition-colors active:opacity-70" href="#">Ethics Policy</a>
+<a class="text-zinc-500 hover:text-zinc-900 transition-colors active:opacity-70" href="#">Methodology</a>
+<a class="text-zinc-500 hover:text-zinc-900 transition-colors active:opacity-70" href="#">API Access</a>
+<a class="text-zinc-500 hover:text-zinc-900 transition-colors active:opacity-70" href="#">Privacy</a>
+</div>
+</div>
+</footer>
+</body></html>

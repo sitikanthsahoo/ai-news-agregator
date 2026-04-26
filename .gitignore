@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+env/
+.env
+.env.local
+
+# Databases
+*.db
+*.sqlite3
+
+# IDEs
+.vscode/
+.idea/
+.DS_Store
+
+# Logs
+*.log
+
+# Frontend (if not already covered)
+frontend/node_modules/
+frontend/.next/
+frontend/.env
+frontend/.env.local
+
+# Test/Scratch files
+test_*.py
+!test_phase3.py
+verify_phase3.py
+test_http_1.py
+test_summary.py
+test_summary_db.py
+test_http.py

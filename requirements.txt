@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+sqlalchemy
+oracledb
+python-jose[cryptography]
+passlib[bcrypt]
+python-dotenv
+httpx
+pydantic[email]
+pydantic-settings
+websockets
+transformers
+torch
+beautifulsoup4
+requests
+alembic
